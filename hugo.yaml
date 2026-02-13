@@ -10,7 +10,6 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
-mainsections: ["posts"]
 
 minify:
   disableXML: true
@@ -18,30 +17,7 @@ minify:
 
 pagination:
   disableAliases: false
-  pagerSize: 5
-
-
-# languages:
-#   en:
-#     languageName: "English"
-#     weight: 1
-#     taxonomies:
-#       category: categories
-#       tag: tags
-#       series: series
-#     menu:
-#       main:
-#         - name: Archive
-#           url: archives/
-#           weight: 5
-#         - name: Search
-#           url: search/
-#           weight: 10
-#         - name: Tags
-#           url: tags/
-#           weight: 10
-#         - name: LinkedIn
-#           url: https://www.linkedin.com/in/eunjin-kwon-a1636114a/
+  pagerSize: 3
 
 outputs:
   home:
@@ -76,6 +52,7 @@ menu:
 params:
   # author: "AtoNovum"
   # description: "AtoNovum's Blog"
+  mainSections: ["posts"]
   keywords: [Blog, Technology]
   social:
     - name: "GitHub"
@@ -90,9 +67,9 @@ params:
   ShowBreadCrumbs: true
   ShowReadingTime: true
   ShowShareButtons: true
-  ShowAllPagesInArchive: true
+  # ShowAllPagesInArchive: true
   ShowCodeCopyButtons: true
-  ShowWordCount: true
+  # ShowWordCount: true
   # ShowRssButtonInSectionTermList: true
   ShowToc: true
   TocOpen: true
@@ -100,17 +77,8 @@ params:
   # disableSpecial1stPost: true
   UseHugoToc: true
   disableScrollToTop: false
-  hidemeta: false
+  hideMeta: false
   hideSummary: false
-
-  homeInfoParams:
-    Title: "Hi, I'm Eunjin Kwon."
-    Content: >
-      👋 Welcome to my blog.
-
-      - My interests are in AI, ML, and Data Science.
-
-      - I'm currently working as a Software Engineer at NaverLabs.
 
   # for search
   # https://fusejs.io/api/options.html
@@ -118,16 +86,16 @@ params:
     isCaseSensitive: false
     shouldSort: true
     location: 0
-    distance: 1000
+    distance: 100
     threshold: 0.4
-    minMatchCharLength: 0
+    minMatchCharLength: 2
     # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
   
-  # editPost:
-  #   URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
-  #   Text: "Suggest Changes" # edit text
-  #   appendFilePath: true # to append file path to Edit link
+  editPost:
+    URL: "https://github.com/atonovum/blog/tree/main/content"
+    Text: "Edit"
+    appendFilePath: true # to append file path to Edit link
 
   assets:
     disableHLJS: true
