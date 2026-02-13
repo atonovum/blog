@@ -4,4 +4,4 @@
 	branch = main
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
-	url = https://github.com/atonovum/hugo-PaperMod.git
+	url = git@github.com/atonovum/hugo-PaperMod.git

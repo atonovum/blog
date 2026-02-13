@@ -1,0 +1,3 @@
+# Blog
+
+Hugo Blog Site
