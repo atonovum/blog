@@ -1,10 +1,10 @@
 ---
-title: 'Test2'
-date: '2026-02-14T01:09:48+09:00'
-# weight: 1
-tags: ["diary"]
-# draft: true
-# ShowToC: false
+title: 'Dailylife'
+date: '2026-02-13T22:42:01+09:00'
+draft: false
+ShowToC: false
+tags: ["Diary"]
+categories: ["Life"]
 # cover:
 #     image: "<image path/url>" # image path/url
 #     alt: "<alt text>" # alt text
@@ -13,4 +13,20 @@ tags: ["diary"]
 #     hidden: true # only hide on current single page
 ---
 
-do something
+# Title 1
+
+Do something
+
+## Title 2
+
+Little Something
+
+### Title 3
+
+TBD
+
+## Next
+
+$\mu = \sigma^2$
+
+is it wrong?

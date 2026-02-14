@@ -2,9 +2,9 @@
 date: '{{ .Date }}'
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 categories: ["Life"]
-tags: ["Tag A"]
+tags: ["Diary", "Leisure", "Interview"]
 # draft: true
-ShowToC: true
+ShowToC: false
 ---
 
 # Title

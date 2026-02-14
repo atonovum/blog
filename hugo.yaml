@@ -10,6 +10,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
+disablePathLowercase: false # necessary for lowercase URL
 
 minify:
   disableXML: true
@@ -17,7 +18,7 @@ minify:
 
 pagination:
   disableAliases: false
-  pagerSize: 3
+  pagerSize: 5
 
 outputs:
   home:
@@ -32,27 +33,19 @@ menu:
       name: Archive
       url: /archives/
       weight: 5
-    - identifier: categories
-      name: Category
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: Tag
+    - identifier: Tags
+      name: Tags
       url: /tags/
-      weight: 20
+      weight: 10
     - identifier: Resume
       name: CV
       url: https://example.org
-      weight: 30
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 40
+      weight: 15
+
+permalinks:
+  archives: /:sections/:year-:month-:day-:title/
 
 params:
-  # author: "AtoNovum"
-  # description: "AtoNovum's Blog"
-  mainSections: ["posts"]
   keywords: [Blog, Technology]
   social:
     - name: "GitHub"
@@ -79,6 +72,7 @@ params:
   disableScrollToTop: false
   hideMeta: false
   hideSummary: false
+  math: true
 
   # for search
   # https://fusejs.io/api/options.html
@@ -90,20 +84,16 @@ params:
     threshold: 0.4
     minMatchCharLength: 2
     # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content"]
+    keys: ["title", "permalink", "summary", "content", "date"]
   
-  editPost:
-    URL: "https://github.com/atonovum/blog/tree/main/content"
-    Text: "Edit"
-    appendFilePath: true # to append file path to Edit link
-
   assets:
     disableHLJS: true
 
 markup:
-  # goldmark:
-  #   renderer:
-  #     unsafe: true
+  # allow direct types HTML tags in markdown.
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     noClasses: false
     # anchorLineNos: true
