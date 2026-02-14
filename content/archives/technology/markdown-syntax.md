@@ -1,7 +1,7 @@
 ---
 date: '2026-02-14T20:35:53+09:00'
 title: 'Markdown Syntax'
-categories: ["Techonology"]
+categories: ["Technology"]
 tags: ["Paper", "Research", "AI/ML", "Data Science"]
 # draft: true
 ShowToC: true

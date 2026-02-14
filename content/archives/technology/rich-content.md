@@ -1,7 +1,7 @@
 ---
 date: '2026-02-14T20:34:43+09:00'
 title: 'Rich Content'
-categories: ["Techonology"]
+categories: ["Technology"]
 tags: ["Paper", "Research", "AI/ML", "Data Science"]
 # draft: true
 ShowToC: true

@@ -1,7 +1,7 @@
 ---
 date: '2026-02-14T20:28:24+09:00'
 title: 'Math Settings'
-categories: ["Techonology"]
+categories: ["Technology"]
 tags: ["Paper", "Research", "AI/ML", "Data Science"]
 # draft: true
 ShowToC: true

@@ -1,7 +1,7 @@
 ---
 date: '2026-02-14T20:25:19+09:00'
 title: 'How to write code'
-categories: ["Techonology"]
+categories: ["Technology"]
 tags: ["Paper", "Research", "AI/ML", "Data Science"]
 # draft: true
 ShowToC: true

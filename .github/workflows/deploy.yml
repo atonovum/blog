@@ -1,0 +1,30 @@
+name: Deploy Hugo
+on:
+  push:
+    branches: [ main ] # 소스 코드가 push될 때 실행
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true # 테마 서브모듈 포함
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          external_repository: atonovum/atonovum.github.io
+          personal_token: ${{ secrets.ACTION_TOKEN }} # 설정 필요
+          publish_dir: ./public
+          publish_branch: main

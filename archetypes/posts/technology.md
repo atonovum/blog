@@ -1,7 +1,7 @@
 ---
 date: '{{ .Date }}'
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-categories: ["Techonology"]
+categories: ["Technology"]
 tags: ["Paper", "Research", "AI/ML", "Data Science"]
 # draft: true
 ShowToC: true
