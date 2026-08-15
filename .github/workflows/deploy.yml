@@ -1,30 +1,50 @@
 name: Deploy Hugo
+
 on:
   push:
-    branches: [ main ] # 소스 코드가 push될 때 실행
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hugo-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true # 테마 서브모듈 포함
+          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.146.0'
           extended: true
 
       - name: Build
         run: hugo --minify
 
+      - name: Verify deployment key
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        run: |
+          if [[ -z "$ACTIONS_DEPLOY_KEY" ]]; then
+            echo "::error::Repository secret ACTIONS_DEPLOY_KEY is required to deploy to atonovum/atonovum.github.io."
+            exit 1
+          fi
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           external_repository: atonovum/atonovum.github.io
-          personal_token: ${{ secrets.ACTION_TOKEN }} # 설정 필요
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
           publish_branch: main
