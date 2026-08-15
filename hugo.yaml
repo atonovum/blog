@@ -84,7 +84,7 @@ params:
     threshold: 0.4
     minMatchCharLength: 2
     # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content", "date"]
+    keys: ["title", "content"]
   
   assets:
     disableHLJS: true
