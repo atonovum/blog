@@ -17,3 +17,10 @@ _testmain.go
 .DS_Store
 .hugo_build.lock
 
+# Coding-agent working directories
+.omc/
+.omo/
+.claude/
+.codex/
+.agy/
+
